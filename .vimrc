@@ -126,6 +126,7 @@ map <Leader>k <Plug>(easymotion-k)
 " Nerdtree setup
 " autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['']
