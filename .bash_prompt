@@ -11,6 +11,7 @@ COLOR_RESET="\033[0m"
 COLOR_BLACK="\033[0;30m"
 COLOR_BLUE="\033[0;34m"
 COLOR_GREEN="\033[1;32m"
+COLOR_THINGREEN="\033[0;32m"
 COLOR_CYAN="\033[0;36m"
 COLOR_RED="\033[1;31m"
 COLOR_PURPLE="\033[0;35m"
@@ -125,7 +126,7 @@ function set_bash_prompt() {
       ;;
   esac
 
-  PS1="${XTERM_TITLE}\[$COLOR_PURPLE\]\u\[$COLOR_RESET\]@\[$COLOR_RED\]\h\[$COLOR_RESET\] \w\[$COLOR_CYAN\]"
+  PS1="${XTERM_TITLE}\[$COLOR_BLUE\]\u\[$COLOR_RESET\]@\[$COLOR_RED\]\h\[$COLOR_RESET\] \w\[$COLOR_CYAN\]"
 
   if [ $SHOW_GIT_PROMPT -eq 1 ] ; then
     PS1="${PS1}$(git_prompt)"
