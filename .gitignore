@@ -1,0 +1,11 @@
+*
+!.gitignore
+!.gitconfig
+!.bash_aliases
+!.bash_prompt
+!.tmux.conf
+!.vim-bundles
+!.vimrc
+!README.md
+
+!*/
