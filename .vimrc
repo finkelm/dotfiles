@@ -32,7 +32,7 @@ set expandtab
 set incsearch
 
 " prevent highlight from remaining after search
-set nohlsearch
+"set nohlsearch
 
 " create a way to remove the highlighted search
 nmap <silent> <leader><space> :nohlsearch<cr>
@@ -158,7 +158,7 @@ let g:badwolf_css_props_highlight = 1
 let g:badwolf_html_link_underline = 1
 
 " Airline settings
-let g:colors_name = "badwolf"
+"let g:colors_name = "badwolf"
 let g:airline#extensions#tabline#enabled =1
 let g:airline_powerline_fonts=1
 if !exists('g:airline_symbols')
