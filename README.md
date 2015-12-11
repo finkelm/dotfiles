@@ -10,4 +10,4 @@ The way I like to use it is to just have the git repo containing these files in 
     git fetch
     git checkout -t origin/master
 
-
+I then use `.bashrc` for my local-specific scripts/aliases.
