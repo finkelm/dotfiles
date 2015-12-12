@@ -1,3 +1,6 @@
+# Use vim as a default
+export EDITOR=vim
+
 # Import colors
 eval `dircolors ~/.dircolors`
 
@@ -29,6 +32,8 @@ alias p='ps -ef | grep -v grep | grep'
 alias rbe='rbenv bundle exec'
 alias rber='rbenv bundle exec rake'
 
+# probably should be placed somewhere that's not aliases
+# but aliases is always imported by digitalocean by default, so this is convenient
 if [ -f ~/.bash_prompt ]; then
   . ~/.bash_prompt
 fi
