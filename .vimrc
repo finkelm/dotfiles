@@ -7,6 +7,7 @@ set nocompatible
 " Vundle
 " ----------------------------------------
 source $HOME/.vim-bundles
+syntax enable
 
 " ----------------------------------------
 " Settings
@@ -16,6 +17,9 @@ set nowrap
 set number
 set numberwidth=2
 
+" set this to match tmux
+set term=screen-256color
+" set t_Co=256
 " delete all the things
 set backspace=indent,eol,start
 
@@ -143,7 +147,6 @@ let g:syntastic_check_on_wq = 0
 " font
 colorscheme molokai
 set background    = "dark"
-syntax enable
 
 " Theme stuff
 nnoremap <leader>1 :colorscheme obsidian<cr>
