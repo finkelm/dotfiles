@@ -44,6 +44,9 @@ Bundle 'scrooloose/nerdtree'
 "" Awesome syntax and errors highlighter
 Bundle 'scrooloose/syntastic'
 
+"" Autoreloading
+Bundle 'djoshea/vim-autoread'
+
 "" Syntax highlight
 Bundle 'plasticboy/vim-markdown'
 Bundle 'cakebaker/scss-syntax.vim'
@@ -68,6 +71,9 @@ Bundle 'tpope/vim-haml'
 "" JavaScript
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
+
+"" Jade
+Bundle 'digitaltoad/vim-jade'
 
 "" Installing plguins the first time
 if has_vundle == 0

@@ -29,8 +29,8 @@ alias grep='grep --color=auto'
 alias p='ps -ef | grep -v grep | grep'
 
 # Ruby / Bundler
-alias rbe='rbenv bundle exec'
-alias rber='rbenv bundle exec rake'
+alias rb='rbenv exec bundle exec'
+alias rbr='rbenv exec bundle exec rake'
 
 # probably should be placed somewhere that's not aliases
 # but aliases is always imported by digitalocean by default, so this is convenient
