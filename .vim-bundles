@@ -72,6 +72,9 @@ Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 
+"" ES6/JSX
+Bundle 'mxw/vim-jsx'
+
 "" Jade
 Bundle 'digitaltoad/vim-jade'
 
