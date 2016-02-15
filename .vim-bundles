@@ -29,7 +29,7 @@ Bundle 'trevorrjohn/vim-obsidian'
 Bundle 'chriskempson/tomorrow-theme'
 Bundle 'tomasr/molokai'
 
-"" Easy... motions... yeah.
+"" Easy motions
 Bundle 'Lokaltog/vim-easymotion'
 
 "" Edit files using sudo/su (using sudoedit)
@@ -44,11 +44,17 @@ Bundle 'scrooloose/nerdtree'
 "" Awesome syntax and errors highlighter
 Bundle 'scrooloose/syntastic'
 
+"" HTML Fast Writing
+Plugin 'mattn/emmet-vim'
+
 "" Autoreloading
 Bundle 'djoshea/vim-autoread'
 
 "" Syntax highlight
+"" Markdown Highlighting
 Bundle 'plasticboy/vim-markdown'
+
+"" SCSS
 Bundle 'cakebaker/scss-syntax.vim'
 
 "" Simpler searching (if you know file name)
@@ -77,6 +83,9 @@ Bundle 'mxw/vim-jsx'
 
 "" Jade
 Bundle 'digitaltoad/vim-jade'
+
+"" Slimbars
+Plugin 'gaogao1030/vim-slimbars'
 
 "" Installing plguins the first time
 if has_vundle == 0

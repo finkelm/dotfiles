@@ -87,8 +87,6 @@ set showmatch
 set matchtime=2
 
 " Changes up/down to move by line in editor
-nnoremap j gj
-nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 

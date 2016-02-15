@@ -31,6 +31,7 @@ alias p='ps -ef | grep -v grep | grep'
 # Ruby / Bundler
 alias rb='rbenv exec bundle exec'
 alias rbr='rbenv exec bundle exec rake'
+alias rubystatic='rbenv exec ruby -run -ehttpd . -p8000'
 
 # probably should be placed somewhere that's not aliases
 # but aliases is always imported by digitalocean by default, so this is convenient
