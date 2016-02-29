@@ -53,6 +53,7 @@ Bundle 'djoshea/vim-autoread'
 "" Syntax highlight
 "" Markdown Highlighting
 Bundle 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled = 1
 
 "" SCSS
 Bundle 'cakebaker/scss-syntax.vim'
