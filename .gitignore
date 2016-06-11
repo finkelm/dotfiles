@@ -1,11 +1,8 @@
 *
 !.gitignore
 !.gitconfig
-!.bash_aliases
-!.bash_prompt
 !.tmux.conf
 !.vim-bundles
 !.vimrc
-!.dircolors
+!.bash/
 !README.md
-

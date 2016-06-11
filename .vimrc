@@ -38,11 +38,12 @@ set expandtab
 " Trigger autoread when changing buffers or coming back to vim.
 au FocusGained,BufEnter * :silent! !
 
+"------------
+"Searching
+"------------
+
 " enable incremental search
 set incsearch
-
-" prevent highlight from remaining after search
-"set nohlsearch
 
 " create a way to remove the highlighted search
 nmap <silent> <leader><space> :nohlsearch<cr>
@@ -74,17 +75,8 @@ set wildignore+=*.o,*.obj,*.pyc,.git,*.bak,.svn
 " Change the mapleader from \ to ,
 let mapleader=","
 
-" Hide buffers instead of closing - multiple files, one window
-set hidden
-
 " Remember up to 1000 'colon' commmands and search patterns
 set history=1000
-
-" When a bracket is inserted, briefly jump to a matching one
-set showmatch
-
-" Jump to matching bracket for 2/10th of a second (works with showmatch)
-set matchtime=2
 
 " Changes up/down to move by line in editor
 vnoremap j gj
@@ -113,83 +105,17 @@ nmap <Space> <PageDown>
 " Highight the active cursor line
 set cursorline
 
-" easy motion - highlight all of the things
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
-
-" get a quick find
-nmap s <Plug>(easymotion-s2)
-
-" Turn on case insensitive feature
-let g:EasyMotion_smartcase = 1
-
-" JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-
-" Nerdtree setup
-" autocmd vimenter * NERDTree
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-
-" Syntastic
-let g:syntastic_javascript_checkers = ['']
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-" font
-colorscheme molokai
-set background    = "dark"
-
-" Theme stuff
-nnoremap <leader>1 :colorscheme obsidian<cr>
-nnoremap <leader>2 :colorscheme tomorrow-night-bright<cr>
-nnoremap <leader>3 :colorscheme molokai<cr>
-nnoremap <leader>4 :colorscheme badwolf<cr>
-
-" badwolf settings
-let g:badwolf_darkgutter = 1
-let g:badwolf_tabline = 2
-let g:badwolf_css_props_highlight = 1
-let g:badwolf_html_link_underline = 1
-
-" Airline settings
-"let g:colors_name = "badwolf"
-let g:airline#extensions#tabline#enabled =1
-let g:airline_powerline_fonts=1
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+" Set thin cursor
+if has("autocmd")
+  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
+  au InsertEnter,InsertChange *
+    \ if v:insertmode == 'i' | 
+    \   silent execute '!echo -ne "\e[6 q"' | redraw! |
+    \ elseif v:insertmode == 'r' |
+    \   silent execute '!echo -ne "\e[4 q"' | redraw! |
+    \ endif
+  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
-
-" unicode symbols - use bn and bp for movement
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-set laststatus=2
-
-" CtrlP settings 
-let g:ctrlp_map = '<leader>t'
-let g:ctrlp_cmd = 'CtrlP'
 
 " File Types
 if has("autocmd")

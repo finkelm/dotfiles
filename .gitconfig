@@ -1,6 +1,6 @@
 [user]
-	  name = Mark Finkelstein
-	  email = finkel.mark@gmail.com
+    name = Mark Finkelstein
+    email = finkel.mark@gmail.com
 [alias]
     co = checkout
     st = status --short --branch

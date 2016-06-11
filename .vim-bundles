@@ -20,70 +20,147 @@ set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 
 "" Vundle can manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 "" precision colorscheme
 Plugin 'sjl/badwolf'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'trevorrjohn/vim-obsidian'
-Bundle 'chriskempson/tomorrow-theme'
-Bundle 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'trevorrjohn/vim-obsidian'
+Plugin 'chriskempson/tomorrow-theme'
+Plugin 'tomasr/molokai'
+
+" font
+colorscheme molokai
+set background    = "dark"
+
+" Theme stuff
+nnoremap <leader>1 :colorscheme obsidian<cr>
+nnoremap <leader>2 :colorscheme tomorrow-night-bright<cr>
+nnoremap <leader>3 :colorscheme molokai<cr>
+nnoremap <leader>4 :colorscheme badwolf<cr>
+
+" badwolf settings
+let g:badwolf_darkgutter = 1
+let g:badwolf_tabline = 2
+let g:badwolf_css_props_highlight = 1
+let g:badwolf_html_link_underline = 1
 
 "" Easy motions
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
+
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
+" get a quick find
+nmap s <Plug>(easymotion-s2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 "" Edit files using sudo/su (using sudoedit)
-Bundle 'chrisbra/SudoEdit.vim'
+Plugin 'chrisbra/SudoEdit.vim'
 
 "" Super easy commenting, toggle comments etc
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 
 "" Filesystem navigation
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
+
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 "" Awesome syntax and errors highlighter
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
+
+" set different checkers
+let g:syntastic_javascript_checkers = ['']
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+"" Simpler searching (if you know file name)
+Plugin 'kien/ctrlp.vim'
+" CtrlP settings 
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_cmd = 'CtrlP'
 
 "" HTML Fast Writing
 Plugin 'mattn/emmet-vim'
 
 "" Autoreloading
-Bundle 'djoshea/vim-autoread'
+Plugin 'djoshea/vim-autoread'
+
+"" UI Additions
+Plugin 'bling/vim-airline'
+let g:airline#extensions#tabline#enabled =1
+let g:airline_powerline_fonts=1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" unicode symbols - use bn and bp for movement
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+set laststatus=2
+
+"" Autoclose (, etc
+Plugin 'Townk/vim-autoclose'
+
+"" Surround (s key)
+Plugin 'tpope/vim-surround'
+
+"" Snippets
+Plugin 'honza/vim-snippets'
 
 "" Syntax highlight
 "" Markdown Highlighting
-Bundle 'plasticboy/vim-markdown'
+Plugin 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
 
+"" Quick commenting
+Plugin 'tomtom/tcomment_vim'
+map <leader> <c-_><c-_>
+
 "" SCSS
-Bundle 'cakebaker/scss-syntax.vim'
-
-"" Simpler searching (if you know file name)
-Bundle 'kien/ctrlp.vim'
-
-"" UI Additions
-Bundle 'bling/vim-airline'
-Bundle 'jszakmeister/vim-togglecursor'
-
-"" Autoclose (, etc
-Bundle 'Townk/vim-autoclose'
-
-"" Align your = etc.
-Bundle 'vim-scripts/Align'
+Plugin 'cakebaker/scss-syntax.vim'
 
 "" Ruby
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-haml'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-haml'
 
 "" JavaScript
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
 
 "" ES6/JSX
-Bundle 'mxw/vim-jsx'
+Plugin 'mxw/vim-jsx'
 
 "" Jade
-Bundle 'digitaltoad/vim-jade'
+Plugin 'digitaltoad/vim-jade'
 
 "" Slimbars
 Plugin 'gaogao1030/vim-slimbars'
