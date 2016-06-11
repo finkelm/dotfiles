@@ -1,0 +1,4 @@
+# Use vim as a default
+export VISUAL=vim
+export EDITOR="$VISUAL"
+

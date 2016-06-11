@@ -1,0 +1,29 @@
+# Use vim as a default
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+cur_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Import colors
+#eval "$(dircolors $cur_dir/dircolors)"
+eval `dircolors -b $cur_dir/dircolors`
+
+# aliases
+. $cur_dir/aliases
+
+# making the terminal featureful
+. $cur_dir/prompt
+
+# load other local stuff if it exists
+if [ -f ~/.bash_local ]; then
+  . ~/.bash_local
+fi
+
+# Just to make sure everything is loaded.
+cowfaces=("" " -d" " -b" "" " -g" " -t" " -w" " -y" " -s" " -p" "")
+cowface=${cowfaces[$RANDOM % ${#cowfaces[@]} ]}
+_COLUMNS=$(tput cols)
+y=$((($_COLUMNS - 40)/ 2))
+add=$(printf '%*s' "$y" | tr ' ' ' ')
+fortune | cowsay$cowface | sed "s/^/$add/g"
+echo ""
